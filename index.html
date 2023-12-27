@@ -1,0 +1,1574 @@
+<!-- form new branch -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lato:wght@400;700;900&family=Playfair+Display:wght@400;500;600;700;800&family=Raleway:wght@300;400;500;600;700;800;900&family=Roboto+Serif:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/custom.css">
+    <title>
+      DequeLab: The Shopify Experts: Your One-Stop Shop for All Your Needs
+    </title>
+
+    <style>
+      html * {
+        font-family: "Raleway", sans-serif;
+      }
+
+      .service-title:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 50px;
+        height: 4px;
+        margin: 0 auto;
+        background: rgb(168 85 247);
+        content: "";
+        z-index: 1;
+      }
+
+      body {
+        font-family: "Open Sans", sans-serif;
+        background-color: #ebf4ff;
+      }
+
+      #signUpForm {
+        width: 700px;
+      }
+      #signUpForm .form-header .stepIndicator.active {
+        font-weight: 600;
+      }
+      #signUpForm .form-header .stepIndicator.finish {
+        font-weight: 600;
+        color: #5a67d8;
+      }
+      #signUpForm .form-header .stepIndicator::before {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        z-index: 9;
+        width: 20px;
+        height: 20px;
+        background-color: #c3dafe;
+        border-radius: 50%;
+        border: 3px solid #ebf4ff;
+      }
+      #signUpForm .form-header .stepIndicator.active::before {
+        background-color: #5a67d8;
+        border: 3px solid #c3dafe;
+      }
+      #signUpForm .form-header .stepIndicator.finish::before {
+        background-color: #5a67d8;
+        border: 3px solid #c3dafe;
+      }
+      #signUpForm .form-header .stepIndicator::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 8px;
+        width: 100%;
+        height: 3px;
+        background-color: #f3f3f3;
+      }
+      #signUpForm .form-header .stepIndicator.active::after {
+        background-color: #a3bffa;
+      }
+      #signUpForm .form-header .stepIndicator.finish::after {
+        background-color: #5a67d8;
+      }
+      #signUpForm .form-header .stepIndicator:last-child:after {
+        display: none;
+      }
+      #signUpForm input.invalid {
+        border: 2px solid #ffaba5;
+      }
+      #signUpForm .step {
+        display: none;
+      }
+      
+    </style>
+  </head>
+  <body>
+    
+    <div id="myModal" class="fixed bg-gray-500/75 top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-full max-h-full flex justify-center flex-col">
+    <!-- close button  -->
+    <div class="relative close w-full mt-6">
+        <div class="relative bg-white rounded-lg shadow flex justify-center">
+            <button type="button" class="absolute top-5 left-[50%] right-[50%] text-white bg-red-400 hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center">
+                <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                </svg>
+                <span class="sr-only">Close modal</span>
+            </button>
+        </div>
+    </div>
+
+    <form id="signUpForm" class="p-12 bg-white shadow-xl rounded-lg mx-auto mb-8 mt-8" action="../controllers/contact.php" method="POST">
+        <!-- step one -->
+        <div class="step flex justify-center item-center gap-5">
+            <img class="object-contain mx-auto mt-10 w-28" src="https://t3.ftcdn.net/jpg/02/08/85/54/360_F_208855412_GRkELNNGLy6BKdfU5z3XiEr5mYCfUTkb.jpg" alt="photo" />
+            <p class="text-md text-gray-700 font-bold leading-tight text-center mt-8 mb-5">
+                Get a Free Proposal
+            </p>
+            <p class="mb-5">
+                Please complete the following contact form and our team will guide
+                you through finding solutions that best fit your needs.
+            </p>
+        </div>
+        <!-- step one -->
+        <div class="step">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center my-6">Personal Information</h2>
+            <div class="mb-6">
+                <label for="fullName" class="block text-sm font-medium leading-6 text-gray-900">Full name</label>
+                <div class="mt-2">
+                    <input type="text" placeholder="Enter full name" name="fullName" id="fullName" autocomplete="fullName" required class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label for="companyName" class="block text-sm font-medium leading-6 text-gray-900">Company name</label>
+                <div class="mt-2">
+                    <input type="text" placeholder="Enter company name" name="companyName" id="companyName" autocomplete="companyName" required class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
+                <div class="mt-2">
+                    <input id="email" placeholder="Enter Email" name="email" type="email" autocomplete="email" required class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+            <div class="mb-6">
+                <label for="phoneNumber" class="block text-sm font-medium leading-6 text-gray-900">Phone number</label>
+                <div class="mt-2">
+                    <input type="text" placeholder="Enter phone number" name="phoneNumber" id="phoneNumber" autocomplete="phoneNumber" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                </div>
+            </div>
+        </div>
+        <!-- step two -->
+        <div class="step">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center my-6">Service Type</h2>
+            <div class="py-8">
+                <ul class="grid w-full gap-2 md:grid-cols-3">
+                    <li>
+                        <input type="checkbox" id="store-setup" name="services" class="hidden peer" value="" required="">
+                        <label for="store-setup" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/isometric/30/shop.png" alt="Store Setup" />
+                                <div class="w-full font-semibold">Store Setup</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="theme-development" name="services" class="hidden peer" value="" required="">
+                        <label for="theme-development" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/officel/30/change-theme.png" alt="shop" />
+                                <div class="w-full font-semibold">Theme Development</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="app-development" name="services" class="hidden peer" value="" required="">
+                        <label for="app-development" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/external-smashingstocks-isometric-smashing-stocks/30/external-App-Development-user-interface-smashingstocks-isometric-smashing-stocks-4.png" alt="shop" />
+                                <div class="w-full font-semibold">App Development</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="headless-ecommerce" name="services" class="hidden peer" value="" required="">
+                        <label for="headless-ecommerce" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/color-glass/30/laptop-metrics.png" alt="shop" />
+                                <div class="w-full font-semibold">Headless Ecommerce</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="site-speed" name="services" class="hidden peer" value="" required="">
+                        <label for="site-speed" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/fluency/30/speed.png" alt="shop" />
+                                <div class="w-full font-semibold">Site Speed</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="shopify-plus-services" name="services" class="hidden peer" value="" required="">
+                        <label for="shopify-plus-services" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/ios-filled/30/shopify.png" alt="shop" />
+                                <div class="w-full font-semibold">Shopify Plus Services</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="bugs" name="services" class="hidden peer" value="" required="">
+                        <label for="bugs" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/30/external-bugs-big-data-flaticons-lineal-color-flat-icons.png" alt="shop" />
+                                <div class="w-full font-semibold">Bugs</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="custom-ecommerce" name="services" class="hidden peer" value="" required="">
+                        <label for="custom-ecommerce" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/fluency/30/shopping-bag.png" alt="shop" />
+                                <div class="w-full font-semibold">Custom Ecommerce</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+
+                    <li>
+                        <input type="checkbox" id="others" name="services" class="hidden peer" value="" required="">
+                        <label for="others" class="border block items-center justify-between w-full p-2 text-gray-500 rounded cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                            <div class="flex flex-col text-center ">
+                                <img class="mx-auto mb-3" width="30" height="30" src="https://img.icons8.com/papercut/30/select-all.png" alt="shop" />
+                                <div class="w-full font-semibold">Others</div>
+                                <!-- <div class="w-full text-sm">A JavaScript library for building user interfaces.</div> -->
+                            </div>
+                        </label>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- step three -->
+        <div class="step">
+            <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center my-6">Price & Plan</h2>
+            <div class="mb-4">
+                <label for="description" class="block text-sm font-medium leading-6 text-gray-900">Description</label>
+                <div class="mt-2">
+                    <textarea id="description" name="description" rows="3" class="block w-full rounded-md border-0 px-2 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">Describe your idea</textarea>
+                </div>
+            </div>
+
+            <div className="w-full">
+                <label for="budget" class="block text-sm font-medium leading-6 text-gray-900">Budget</label>
+                <div class="mt-2">
+                    <select id="budget" name="budget" autocomplete="budget" class="block w-full bg-white px-2 rounded-md border-0 py-2 text-gray-900 shadow ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                        <option>Less than $5000</option>
+                        <option>Between $5000 - $10000</option>
+                        <option>Between $10000 - $15000</option>
+                        <option>More than $15000</option>
+                        <option>Others</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="flex mb-8 mt-4">
+                <div class="w-full mr-3">
+                    <label class="block text-sm font-medium leading-6 text-gray-900" for="startingDate">Starting Date?</label>
+                    <div class="mt-2">
+                        <input type="date" name="startingDate" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+
+                <div class="w-full">
+                    <label class="block text-sm font-medium leading-6 text-gray-900" for="launchingDate">Launching Date?</label>
+                    <div class="mt-2">
+                        <input type="date" name="launchingDate" class="block w-full rounded-md border-0 py-2 px-3 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- step three -->
+
+        <!-- start previous / next buttons -->
+        <div class="form-footer flex gap-3 mt-8">
+            <!-- <button type="button" class="px-3.5 py-2.5 text-sm font-semibold shadow-sm text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Alternative</button> -->
+
+            <button type="button" id="prevBtn" class="flex-1 block w-full px-3.5 py-2.5 text-sm font-semibold shadow-sm text-gray-900 focus:outline-none bg-white rounded-md border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" onclick="nextPrev(-1)">
+                Previous
+            </button>
+            <button type="button" id="nextBtn" class="flex-1 block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" onclick="nextPrev(1)">
+                Next
+            </button>
+        </div>
+        <!-- end previous / next buttons -->
+    </form>
+</div>
+
+    <div class="bg-white">
+      <header class="absolute inset-x-0 top-0 z-50 shadow sticky bg-white">
+
+        <nav
+          class="flex items-center justify-between p-6 lg:px-8"
+          aria-label="Global"
+        >
+          <div class="flex lg:flex-1">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <span class="font-xl font-extrabold text-purple-800">D</span>
+              <span class="font-xl font-extrabold text-blue-800">E</span>
+              <span class="font-xl font-extrabold text-green-800">Q</span>
+              <span class="font-xl font-extrabold text-orange-800">U</span>
+              <span class="font-xl font-extrabold text-blue-800 mr-3">E</span>
+
+              <span class="font-xl font-extrabold text-green-800">L</span>
+              <span class="font-xl font-extrabold text-orange-800">A</span>
+              <span class="font-xl font-extrabold text-blue-800">B</span>
+            </a>
+          </div>
+          <div class="flex lg:hidden">
+            <button
+              type="button" id="mobile_btn"
+              class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            </button>
+          </div>
+
+
+          <div class="hidden lg:flex lg:gap-x-12">
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+              >Home</a
+            >
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+              >Services</a
+            >
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+              >Blogs</a
+            >
+            <a href="#" class="text-sm font-semibold leading-6 text-gray-900"
+              >About Us</a
+            >
+          </div>
+          <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+            <button
+              class="text-sm font-semibold leading-6 text-gray-900"
+              type="button"
+              id="myBtn"
+            >
+              Get Started <span aria-hidden="true">&rarr;</span>
+            </button>
+          </div>
+        </nav>
+      
+
+        <!-- Mobile menu, show/hide based on menu open state -->
+        <div class="lg:hidden" role="dialog" aria-modal="true">
+          <!-- Background backdrop, show/hide based on slide-over state. -->
+          <!-- <div class="fixed inset-0 z-50"></div> -->
+          <div
+            class="fixed1 menu_area inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+          >
+            <div class="flex items-center justify-between">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">Your Company</span>
+                <span class="font-xl font-extrabold italic text-purple-800"
+                  >D</span
+                >
+                <span class="font-xl font-extrabold italic text-blue-800"
+                  >E</span
+                >
+                <span class="font-xl font-extrabold italic text-green-800"
+                  >Q</span
+                >
+                <span class="font-xl font-extrabold italic text-orange-800"
+                  >U</span
+                >
+                <span class="font-xl font-extrabold italic text-blue-800"
+                  >E</span
+                >
+              </a>
+              <button
+                type="button" id="mobile_btn_remove"
+                class="-m-2.5 rounded-md p-2.5 text-gray-700"
+              >
+                <span class="sr-only">Close menu</span>
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+            <div class="mt-6 flow-root">
+              <div class="-my-6 divide-y divide-gray-500/10">
+                <div class="space-y-2 py-6">
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Home</a
+                  >
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Services</a
+                  >
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Blogs</a
+                  >
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >About Us</a
+                  >
+                </div>
+                <div class="py-6">
+                  <a
+                    href="#"
+                    class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    >Get Started</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="line_4 relative isolate px-6 pt-14 lg:px-8">
+        <div
+          class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div class="mx-auto max-w-7xl py-32 sm:py-48 lg:py-56">
+          <div class="flex w-full">
+           
+            <div class="text-left mr-5 w-full left_side">
+
+              <!-- <img src="images/banner.PNG" alt="" class="m_banner_img" style="display: none;"> -->
+              
+              <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl">
+                The Experts: <br>Your One-Stop Shop for All Technical Needs
+              </h1>
+              <p class="mt-6 text-lg leading-8 text-gray-600" style="padding-bottom: 40px;">
+                We are committed to providing our clients with the best possible
+                service. We are always available to answer your questions and
+                help you with any problems you may have. We are also constantly
+                up-to-date on the latest Shopify developments.
+              </p>
+                   <div class="button_5">
+                          <a href="#_" class="btn1 relative inline-block px-4 py-2 font-medium group">
+
+                            <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+
+                            <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+
+                            <span class="relative text-black group-hover:text-white">Talk to our Experts</span>
+                          </a>
+
+                          <a href="#_" class="btn2 relative inline-block px-4 py-2 font-medium group">
+                            <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                            <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                            <span class="relative text-black group-hover:text-white">Get Quote</span>
+                          </a>
+                    </div>
+                        <!-- <div class="mt-10 flex items-center gap-x-6">
+                <div class="flex items-center">
+                  <img src="images/envelope.svg" alt="" class="h-8 mr-3"/>
+                  <p>contact@dequelab.com</p>
+                </div>
+                <div class="flex items-center">
+                  <img src="images/phone.svg" alt="" class="h-8 mr-3"/>
+                  <p>+8801763568688</p>
+                </div>
+              </div> -->
+          </div>
+
+          <div class=" logo-1 flex w-full justify-end flex-wrap">
+            <div class="flex mb-5">
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow mr-5" src="images/laravel.svg" alt="" />
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow mr-5" src="images/shopify.svg" alt="" />
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow" src="images/docker.svg" alt="" />
+            </div>
+            <div class="flex mb-5">
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow mr-5" src="images/node-js.svg" alt="" />
+
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow mr-5" src="images/jquery-original-wordmark.svg" alt="" />
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow" src="images/swagger.svg" alt="" />
+            </div>
+
+            <div class="flex">
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow mr-5" src="images/react.svg" alt="" />
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow mr-5" src="images/aws.svg" alt="" />
+              <img class="object-contain h-28 w-28 border p-3 rounded shadow" src="images/git.svg" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+        <div
+          class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+      </div>
+
+      <!-- 2nd Section: Services -->
+
+      <div class="relative isolate px-6 pt-8 lg:px-8" id="services">
+        <h1 class="blog_2 text-2xl text-center">SERVICES</h1>
+        <h1 class="h_1_1 text-6xl text-center border-b-1 service-title">
+          Check Out Our Specialized Services
+        </h1>
+
+        
+        <div class="mx-auto max-w-7xl py-8 sm:py-8 lg:py-8">
+          <div
+            class="max-w-screen-xl py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24"
+          >
+            <!-- Row -->
+            <div class="row-1 items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16 ">
+              <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+
+                <img
+                class="image_2 w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+                src="./images/office-work.svg"
+                alt="dashboard feature image"
+              />
+                <h2
+                  class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+                >
+                  We are Shopify enthusiasts
+                </h2>
+                <p class="leading-9 font-light lg:text-xl " style="width: 100%; font-size: 18px; ">
+                  As a Shopify Plus Partner, we help ecommerce brands achieve
+                  their growth goals by implementing powerful, robust, and
+                  impactful infrastructures on Shopify.
+                </p>
+                <!-- List -->
+                <ul role="list" class="pt-8 space-y-5 my-7" style="font-size: 10px;">
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700 " 
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Store Build</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Theme Development</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3 ">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >App Development</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >App Integration</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Checkout Extension</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Custom Storefront</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Speed Optimization</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Consulting & Support</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <img
+                class="image_1 w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+                src="./images/office-work.svg"
+                alt="dashboard feature image"
+              />
+            </div>
+            <!-- Row -->
+            <div class="row-2 items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+              <img
+                class="w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+                src="./images/order-confirmation.svg"
+                alt="feature image 2"
+              />
+              <div class="text-gray-500 sm:text-lg dark:text-gray-400">
+                <h2
+                  class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white"
+                >
+                  Software Development
+                </h2>
+                <p class="size_1 mb-8 font-light lg:text-xl" style="font-size: 18px;">
+                  We are your one-stop shop for software development. From
+                  ideation to implementation, we can help you every step of the
+                  way.
+                </p>
+                <!-- List -->
+                <ul role="list" class="pt-8 space-y-5 my-7">
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Custom E-commerce</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Software Architecture And Design</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Database Management</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Scalable System Design</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >DevOps Services</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Custom ERP Solutions</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+
+                  <li
+                    class="flex space-x-3 border-b border-gray-200 dark:border-gray-700"
+                  >
+                    <div class="flex w-full mb-3">
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Staff Augmentation</span
+                        >
+                      </div>
+
+                      <div class="flex items-center flex-1">
+                        <svg
+                          class="flex-shrink-0 w-7 h-7 text-purple-500 dark:text-purple-400 mr-3"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                            clip-rule="evenodd"
+                          ></path>
+                        </svg>
+                        <span
+                          class="text-base font-medium leading-tight text-gray-900 dark:text-white"
+                          >Consulting & Support</span
+                        >
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd Section: Blogs -->
+
+      <div class="relative isolate px-6 pt-8 lg:px-8">
+        <div
+          class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+          aria-hidden="true"
+        >
+          <div
+            class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <h1 class="blog_1 text-2xl text-center">BLOG</h1>
+        <h1 class="head_2 text-6xl text-center border-b-1 service-title">
+          Check Out Our Recent Blogs
+        </h1>
+        <div class="mx-auto max-w-7xl py-8 sm:py-8 lg:py-8">
+          <div
+            class="max-w-screen-xl mx-auto space-y-8 lg:space-y-12 py-8 lg:py-24"
+          >
+            <div class="grid gap-8 lg:grid-cols-2">
+              <article
+                class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+              >
+                <div
+                  class="flex justify-between items-center mb-5 text-gray-500"
+                >
+                  <span
+                    class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+                  >
+                    <svg
+                      class="mr-1 w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
+                      ></path>
+                    </svg>
+                    Tutorial
+                  </span>
+                  <span class="text-sm">14 days ago</span>
+                </div>
+                <h2
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  <a href="#">How to quickly deploy a static website</a>
+                </h2>
+                <p class="size_2 mb-5 font-light text-gray-500 dark:text-gray-400">
+                  Static websites are now used to bootstrap lots of websites and
+                  are becoming the basis for a variety of tools that even
+                  influence both web designers and developers influence both web
+                  designers and developers.
+                </p>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-4">
+                    <img
+                      class="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                      alt="Jese Leos avatar"
+                    />
+                    <span class="font-medium dark:text-white"> Jese Leos </span>
+                  </div>
+                  <a
+                    href="#"
+                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                  >
+                    Read more
+                    <svg
+                      class="ml-2 w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+              <article
+                class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+              >
+                <div
+                  class="flex justify-between items-center mb-5 text-gray-500"
+                >
+                  <span
+                    class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+                  >
+                    <svg
+                      class="mr-1 w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                        clip-rule="evenodd"
+                      ></path>
+                      <path
+                        d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"
+                      ></path>
+                    </svg>
+                    Article
+                  </span>
+                  <span class="text-sm">14 days ago</span>
+                </div>
+                <h2
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  <a href="#">Our first project with React</a>
+                </h2>
+                <p class="size_3 mb-5 font-light text-gray-500 dark:text-gray-400">
+                  Static websites are now used to bootstrap lots of websites and
+                  are becoming the basis for a variety of tools that even
+                  influence both web designers and developers influence both web
+                  designers and developers.
+                </p>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-4">
+                    <img
+                      class="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                      alt="Bonnie Green avatar"
+                    />
+                    <span class="font-medium dark:text-white">
+                      Bonnie Green
+                    </span>
+                  </div>
+                  <a
+                    href="#"
+                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                  >
+                    Read more
+                    <svg
+                      class="ml-2 w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+
+            <div class="grid gap-8 lg:grid-cols-2">
+              <article
+                class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+              >
+                <div
+                  class="flex justify-between items-center mb-5 text-gray-500"
+                >
+                  <span
+                    class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+                  >
+                    <svg
+                      class="mr-1 w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2 6a2 2 0 012-2h6a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V6zM14.553 7.106A1 1 0 0014 8v4a1 1 0 00.553.894l2 1A1 1 0 0018 13V7a1 1 0 00-1.447-.894l-2 1z"
+                      ></path>
+                    </svg>
+                    Tutorial
+                  </span>
+                  <span class="text-sm">14 days ago</span>
+                </div>
+                <h2
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  <a href="#">How to quickly deploy a static website</a>
+                </h2>
+                <p class="size_4 mb-5 font-light text-gray-500 dark:text-gray-400">
+                  Static websites are now used to bootstrap lots of websites and
+                  are becoming the basis for a variety of tools that even
+                  influence both web designers and developers influence both web
+                  designers and developers.
+                </p>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-4">
+                    <img
+                      class="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/jese-leos.png"
+                      alt="Jese Leos avatar"
+                    />
+                    <span class="font-medium dark:text-white"> Jese Leos </span>
+                  </div>
+                  <a
+                    href="#"
+                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                  >
+                    Read more
+                    <svg
+                      class="ml-2 w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+              <article
+                class="p-6 bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700"
+              >
+                <div
+                  class="flex justify-between items-center mb-5 text-gray-500"
+                >
+                  <span
+                    class="bg-primary-100 text-primary-800 text-xs font-medium inline-flex items-center px-2.5 py-0.5 rounded dark:bg-primary-200 dark:text-primary-800"
+                  >
+                    <svg
+                      class="mr-1 w-3 h-3"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M2 5a2 2 0 012-2h8a2 2 0 012 2v10a2 2 0 002 2H4a2 2 0 01-2-2V5zm3 1h6v4H5V6zm6 6H5v2h6v-2z"
+                        clip-rule="evenodd"
+                      ></path>
+                      <path
+                        d="M15 7h1a2 2 0 012 2v5.5a1.5 1.5 0 01-3 0V7z"
+                      ></path>
+                    </svg>
+                    Article
+                  </span>
+                  <span class="text-sm">14 days ago</span>
+                </div>
+                <h2
+                  class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+                >
+                  <a href="#">Our first project with React</a>
+                </h2>
+                <p class="size_5 mb-5 font-light text-gray-500 dark:text-gray-400">
+                  Static websites are now used to bootstrap lots of websites and
+                  are becoming the basis for a variety of tools that even
+                  influence both web designers and developers influence both web
+                  designers and developers.
+                </p>
+                <div class="flex justify-between items-center">
+                  <div class="flex items-center space-x-4">
+                    <img
+                      class="w-7 h-7 rounded-full"
+                      src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/bonnie-green.png"
+                      alt="Bonnie Green avatar"
+                    />
+                    <span class="font-medium dark:text-white">
+                      Bonnie Green
+                    </span>
+                  </div>
+                  <a
+                    href="#"
+                    class="inline-flex items-center font-medium text-primary-600 dark:text-primary-500 hover:underline"
+                  >
+                    Read more
+                    <svg
+                      class="ml-2 w-4 h-4"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                      ></path>
+                    </svg>
+                  </a>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd Section: Blogs -->
+
+      <div class="relative isolate px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl py-8 sm:py-8 lg:py-8 bg-gradient-to-r from-purple-500 to-green-500 rounded-lg my-8 shadow">
+          <div class="flex_21 flex max-w-screen-xl mx-auto px-16 py-8">
+            <div class="flex flex-col flex-1 justify-between">
+              <h1 class="heading_21 text-5xl text-white font-bold mb-3">
+                Project brainstorm?
+              </h1>
+              <p class="size_6 text-white font-semibold">
+                We'd be happy to discuss your project with you. Our global team
+                has the skills and experience to help you succeed. Contact us to
+                schedule.
+              </p>
+
+              <a href="#_" class="gs_1 text-center relative inline-block px-4 py-3 mt-5 mb-3 font-medium group w-1/3">
+                <span class="absolute inset-0 w-full h-full transition duration-200 ease-out transform translate-x-1 translate-y-1 bg-black group-hover:-translate-x-0 group-hover:-translate-y-0"></span>
+                <span class="absolute inset-0 w-full h-full bg-white border-2 border-black group-hover:bg-black"></span>
+                <span class="relative text-black group-hover:text-white">Get Started</span>
+              </a>
+            </div>
+            <div class="coffee_cup flex-1 my-auto">
+              <img src="images/coffee-cup.svg" class="ml-auto w-28 h-28" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <footer class="bg-white dark:bg-gray-800">
+      <div class="max-w-screen-xl py-6 mx-auto lg:py-16">
+
+
+        
+        <div class="about_1 flex justify-between" style="padding-left: 20px; padding-right: 20px;">
+          <div>
+            <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Company
+            </h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">About</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Careers</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Brand Center</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Blog</a>
+              </li>
+            </u v  l>
+          </div>
+          <div>
+            <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Help center
+            </h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Discord Server</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Twitter</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Facebook</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Legal
+            </h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Privacy Policy</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Licensing</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Terms</a>
+              </li>
+            </ul>
+          </div> 
+          <div>
+            <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+              Technologies
+            </h3>
+            <ul class="text-gray-500 dark:text-gray-400">
+              <li class="mb-4">
+                <a href="#" class="hover:underline">PHP</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Javascript</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">AWS</a>
+              </li>
+              <li class="mb-4">
+                <a href="#" class="hover:underline">Go</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        
+        <hr
+          class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+        />
+        <div class="text-center">
+          <a
+            href="#"
+            class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white"
+          >
+            <span class="font-xl font-extrabold text-purple-800">D</span>
+            <span class="font-xl font-extrabold text-blue-800">E</span>
+            <span class="font-xl font-extrabold text-green-800">Q</span>
+            <span class="font-xl font-extrabold text-orange-800">U</span>
+            <span class="font-xl font-extrabold text-blue-800 mr-3">E</span>
+
+            <span class="font-xl font-extrabold text-green-800">L</span>
+            <span class="font-xl font-extrabold text-orange-800">A</span>
+            <span class="font-xl font-extrabold text-blue-800">B</span>
+          </a>
+          <span
+            class="block text-sm text-center text-gray-500 dark:text-gray-400"
+            >© 2023-2024 Deque Lab™. All Rights Reserved.
+          </span>
+          <ul class="flex justify-center mt-5 space-x-5">
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-500 hover:text-gray-900 dark:hover:text-white dark:text-gray-400"
+              >
+                <svg
+                  class="w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/app.js"></script>
+
+    <script>
+      $("#mobile_btn").click(function(){
+        $(".menu_area").css('display', 'block');
+      });
+      $("#mobile_btn_remove").click(function(){
+        $(".menu_area").css('display', 'none');
+      });
+    </script>
+  </body>
+</html>
+
